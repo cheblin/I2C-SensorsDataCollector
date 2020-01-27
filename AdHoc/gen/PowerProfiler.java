@@ -11,6 +11,7 @@ public interface PowerProfiler {
 			 */
 			@id(1)
 			class Stop {}
+
 			
 			/**
 			 Prepare and start I2C sensors data request timer.
@@ -87,6 +88,7 @@ public interface PowerProfiler {
 			}
 		}
 	}
+	
 	
 	class Client implements InCS, InCPP, InTS, InKT, InRUST {
 		public interface ClientMain extends Device.CommonPacks {

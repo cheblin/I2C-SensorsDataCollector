@@ -120,9 +120,9 @@ pub mod org {
 				pub struct Data_(pub *mut u8);
 
 				impl Data_ {
-					pub fn multiplier(&mut self) -> crate::util_::Item_l { crate::util_::Item_l(self.0) }
-					pub fn time(&mut self) -> crate::util_::Item_c { crate::util_::Item_c(self.0) }
-					pub fn clk_khz(&mut self) -> crate::util_::Item_p { crate::util_::Item_p(self.0) }
+					pub fn multiplier(&mut self) -> crate::util_::Item_n { crate::util_::Item_n(self.0) }
+					pub fn time(&mut self) -> crate::util_::Item_A { crate::util_::Item_A(self.0) }
+					pub fn clk_khz(&mut self) -> crate::util_::Item_v { crate::util_::Item_v(self.0) }
 				}
 
 				impl crate::org::company::Communication::ITransmittable::Pack for Pack_ {
@@ -191,14 +191,14 @@ pub mod org {
 				pub struct Data_(pub *mut u8);
 
 				impl Data_ {
-					pub fn Length(&mut self) -> crate::util_::Item_C { crate::util_::Item_C(self.0) }
-					pub fn Instructions(&mut self, src: Option<&mut dyn Iterator<Item = u8>>) -> crate::util_::ItemArray_U {
+					pub fn Length(&mut self) -> crate::util_::Item_c { crate::util_::Item_c(self.0) }
+					pub fn Instructions(&mut self, src: Option<&mut dyn Iterator<Item = u8>>) -> crate::util_::ItemArray_e {
 						let dst = self.0;
 
 						let len = 256 as usize;
 						let offset = 1;
 						let bytes = dst;
-						let mut array = crate::util_::ItemArray_U { bytes, len, offset, index: !0 };
+						let mut array = crate::util_::ItemArray_e { bytes, len, offset, index: !0 };
 						if let Some(src) = src {
 							for i in 0..len {
 								if let Some(val) = src.next() {
@@ -222,12 +222,12 @@ pub mod org {
 				}
 				pub trait DST_ {
 					fn Length(&mut self, src: u8);
-					fn Instructions(&mut self, src: &mut crate::util_::ItemArray_U);
+					fn Instructions(&mut self, src: &mut crate::util_::ItemArray_e);
 				}
 
 				pub trait SRC_ {
 					fn Length(&mut self) -> u8;
-					fn Instructions(&mut self, dst: &mut crate::util_::ItemArray_U);
+					fn Instructions(&mut self, dst: &mut crate::util_::ItemArray_e);
 				}
 				pub fn pull_<SRC: SRC_>(src: &mut SRC, dst: &mut Data_) {
 					dst.Length().set(src.Length());
@@ -294,19 +294,19 @@ pub mod org {
 				pub struct Data_(pub *mut u8);
 
 				impl Data_ {
-					pub fn values(&mut self) -> crate::util_::ItemArray_A {
+					pub fn values(&mut self) -> crate::util_::ItemArray_J {
 						let src = self.0;
 
 						let len = 1000 as usize;
 						let offset = 0;
 						let bytes = src;
-						crate::util_::ItemArray_A { bytes, len, offset, index: !0 }
+						crate::util_::ItemArray_J { bytes, len, offset, index: !0 }
 					}
 				}
 
 				pub fn push_<DST: DST_>(src: &mut Data_, dst: &mut DST) { dst.values(&mut src.values()); }
 				pub trait DST_ {
-					fn values(&mut self, src: &mut crate::util_::ItemArray_A);
+					fn values(&mut self, src: &mut crate::util_::ItemArray_J);
 				}
 
 				pub mod values {
