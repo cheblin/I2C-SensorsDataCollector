@@ -18,4 +18,7 @@ Content of the generated [AdHoc/gen/InC/Device/Demo_.c](https://github.com/chebl
 
 
 I replaced the original puzzling structures with a simple bytes buffer [`InstructionsPack`](https://github.com/cheblin/I2C-SensorsDataCollector/blob/master/AdHoc/src/org/company/PowerProfiler.java#L84) with, assembler like instructions. So microcontroller just read instructions and acting accordingly.
+C code of instruction processing [is here.](https://github.com/cheblin/I2C-SensorsDataCollector/blob/master/STM32F103/Main/main.c#L94)
 Instructions [algorithm description](https://github.com/cheblin/I2C-SensorsDataCollector/blob/master/AdHoc/src/org/company/PowerProfiler.java#L59) can be found in the protocol description file and its content, respectively, spreads into generated code
+
+This project is just a first try and not fully working yet. I am not sure in respect hardware manipulations, but absolutely confident with protocol handling.
