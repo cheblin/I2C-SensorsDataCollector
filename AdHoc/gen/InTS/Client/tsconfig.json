@@ -1,0 +1,13 @@
+{
+  "compilerOptions": {
+    "module": "commonjs",
+    "target": "es2019",
+    "outDir":"./JS",
+    "strictNullChecks": true,
+    "sourceMap": true
+  },
+  "include": ["*.ts"],
+  "exclude": [
+    "node_modules"
+  ]
+}

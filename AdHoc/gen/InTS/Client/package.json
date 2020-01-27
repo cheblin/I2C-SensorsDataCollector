@@ -1,0 +1,14 @@
+{
+  "name": "AdHoc",
+  "version": "0.0.0",
+  "description": "AdHoc protocol handler source",
+  "main": "Test_.js",
+  "author": {
+    "name": "Unirail.org, Chikirev Sirguy",
+	"email" : "info@unirail.org",
+	"url" : "http://unirail.org"
+  },
+   "devDependencies": {
+    "typescript": "^3.7.4"
+  }
+}

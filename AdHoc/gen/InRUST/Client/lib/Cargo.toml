@@ -1,0 +1,14 @@
+
+												[package]
+												name = "ad_hoc-gen"
+												version = "0.1.0"
+												authors = ["Chickirev Sirguy <info@unirail.org>"]
+												description = "Generated code that use Rust wrapper over AdHoc C lang. source."
+												publish = false #prevent a package from being published to a package registry (like crates.io)
+												
+												edition = "2018"
+												
+												[dependencies]
+												ad_hoc-sys={path="../../ad_hoc-sys"}
+												bitflags = "1.2"
+											

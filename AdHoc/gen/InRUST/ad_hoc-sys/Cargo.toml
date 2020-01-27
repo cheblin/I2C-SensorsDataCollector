@@ -1,0 +1,19 @@
+[package]
+name = "ad_hoc-sys"
+version = "0.1.0"
+authors = ["Chickirev Sirguy <info@unirail.org>"]
+build = "build.rs"
+repository="https://github.com/cheblin/"
+license = "MIT"
+description = "A safe Rust wrapper over AdHoc C lang. source."
+keywords = ["binary", "protocol", "communication", "sys"]
+categories = ["network-programming", "external-ffi-bindings" , "embedded", "hardware-support", "no-std"]
+links = "ad_hoc"
+
+edition = "2018"
+
+[build-dependencies]
+cc = { optional = false, version = "1.0" }
+bindgen = "0.52.0"
+
+[dependencies]
