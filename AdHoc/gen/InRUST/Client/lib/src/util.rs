@@ -48,8 +48,8 @@ unsafe impl std::marker::Sync for Meta6 {}
 pub static mut BusConfiguration: Meta6 = Meta6(6, 0, 0, 0, 5, None, 0, 0, 0, []);
 ///[multiplier](Client::BusConfiguration::multiplier).
 
-pub struct Item_n(pub *mut u8);
-impl Item_n {
+pub struct Item_V(pub *mut u8);
+impl Item_V {
 	pub fn get(&mut self) -> u8 {
 		let src = &mut self.0;
 		let dst = sys::get_bytes(self.0, 0, 1 as usize) as u8;
@@ -59,8 +59,8 @@ impl Item_n {
 }
 ///[time](Client::BusConfiguration::time).
 
-pub struct Item_A(pub *mut u8);
-impl Item_A {
+pub struct Item_f(pub *mut u8);
+impl Item_f {
 	pub fn get(&mut self) -> u16 {
 		let src = &mut self.0;
 		let dst = sys::get_bytes(self.0, 1, 2 as usize) as u16;
@@ -70,8 +70,8 @@ impl Item_A {
 }
 ///[clk_khz](Client::BusConfiguration::clk_khz).
 
-pub struct Item_v(pub *mut u8);
-impl Item_v {
+pub struct Item_l(pub *mut u8);
+impl Item_l {
 	pub fn get(&mut self) -> u16 {
 		let src = &mut self.0;
 		let dst = sys::get_bytes(self.0, 3, 2 as usize) as u16;
@@ -86,8 +86,8 @@ unsafe impl std::marker::Sync for Meta7 {}
 pub static mut InstructionsPack: Meta7 = Meta7(7, 0, 0, 0, 257, None, 0, 0, 0, []);
 ///[Length](Client::InstructionsPack::Length).
 
-pub struct Item_c(pub *mut u8);
-impl Item_c {
+pub struct Item_A(pub *mut u8);
+impl Item_A {
 	pub fn get(&mut self) -> u8 {
 		let src = &mut self.0;
 		let dst = sys::get_bytes(self.0, 0, 1 as usize) as u8;
@@ -98,13 +98,13 @@ impl Item_c {
 
 ///[Instructions](Client::InstructionsPack::Instructions).
 
-pub struct ItemArray_e {
+pub struct ItemArray_C {
 	pub bytes:  *mut u8,
 	pub len:    usize,
 	pub offset: usize,
 	pub index:  usize,
 }
-impl ItemArray_e {
+impl ItemArray_C {
 	pub fn get(&mut self, index: usize) -> u8 {
 		let dst = sys::get_bytes(self.bytes, self.offset + index * 1, 1 as usize) as u8;
 		(dst) as u8
@@ -112,7 +112,7 @@ impl ItemArray_e {
 	pub fn set(&mut self, index: usize, src: u8) { sys::set_bytes((src) as u64, 1 as usize, self.bytes, self.offset + index * 1); }
 }
 
-impl Iterator for ItemArray_e {
+impl Iterator for ItemArray_C {
 	type Item = u8;
 
 	fn next(&mut self) -> Option<<Self as Iterator>::Item> {
@@ -135,20 +135,20 @@ unsafe impl std::marker::Sync for Meta9 {}
 pub static mut SensorsData: Meta9 = Meta9(9, 0, 0, 0, 2000, None, 0, 0, 0, []);
 ///[values](Client::SensorsData::values).
 
-pub struct ItemArray_J {
+pub struct ItemArray_Z {
 	pub bytes:  *const u8,
 	pub len:    usize,
 	pub offset: usize,
 	pub index:  usize,
 }
-impl ItemArray_J {
+impl ItemArray_Z {
 	pub fn get(&mut self, index: usize) -> u16 {
 		let dst = sys::get_bytes(self.bytes, self.offset + index * 2, 2 as usize) as u16;
 		(dst) as u16
 	}
 }
 
-impl Iterator for ItemArray_J {
+impl Iterator for ItemArray_Z {
 	type Item = u16;
 
 	fn next(&mut self) -> Option<<Self as Iterator>::Item> {

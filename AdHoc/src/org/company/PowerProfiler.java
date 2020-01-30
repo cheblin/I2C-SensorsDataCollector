@@ -43,6 +43,7 @@ public interface PowerProfiler {
 			class SetConfiguration {}
 		}
 		
+		
 		interface CommonPacks {
 			/**
 			 Device configuration. Sending from device as reply on PC request, sending from PC as new device configuration
